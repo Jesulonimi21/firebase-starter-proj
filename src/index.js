@@ -6,7 +6,13 @@ import { getFirestore, collection, getDocs,addDoc } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  
+  apiKey: "AIzaSyADnk5t7gdP-5WgEkGZkHvvJEgnnXw1tXg",
+  authDomain: "ecommerce-1bfa7.firebaseapp.com",
+  databaseURL: "https://ecommerce-1bfa7.firebaseio.com",
+  projectId: "ecommerce-1bfa7",
+  storageBucket: "ecommerce-1bfa7.appspot.com",
+  messagingSenderId: "363032235647",
+  appId: "1:363032235647:web:46087ca10c20857b7c794a"
 };
 
 // Initialize Firebase
@@ -20,6 +26,7 @@ async function getAdmins(db) {
     console.log(adminSnapshot,"ADMINSNAPSHOT")
     const adminList = adminSnapshot.docs.map(doc => doc.data());
     console.log(adminList);
+   
     return adminList;
   }
 
@@ -29,7 +36,7 @@ async function getAdmins(db) {
       try{
             addUser(db);
             console.log("Clicked");
-            document.location.href = "./send-data-btn.html"
+      
       }catch(errror){
             console.error(error);
       }
@@ -42,6 +49,7 @@ async function getAdmins(db) {
           last: "Lovelace",
           born: 1815
         });
+        document.location.href = "./send-data-btn.html"
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
