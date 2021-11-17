@@ -1,0 +1,1 @@
+A webpack firebase starer project
